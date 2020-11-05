@@ -163,16 +163,16 @@
           </DesktopFormFactor>
 
           <MobileFormFactor>
-            <FunctionFile resid="residUILessFunctionFileUrl" />
+            <FunctionFile resid="functionFile" />
             <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
               <Group id="mobileMsgRead">
                 <Label resid="groupLabel" />
                 <Control xsi:type="MobileButton" id="msgReadOpenPaneButton">
                   <Label resid="paneReadButtonLabel" />
                   <Icon xsi:type="bt:MobileIconList">
-                    <bt:Image size="25" scale="1" resid="icon16" />
-                    <bt:Image size="25" scale="2" resid="icon16" />
-                    <bt:Image size="25" scale="3" resid="icon16" />
+                    <bt:Image size="25" scale="1" resid="icon32" />
+                    <bt:Image size="25" scale="2" resid="icon32" />
+                    <bt:Image size="25" scale="3" resid="icon32" />
 
                     <bt:Image size="32" scale="1" resid="icon32" />
                     <bt:Image size="32" scale="2" resid="icon32" />
@@ -189,7 +189,6 @@
               </Group>
             </ExtensionPoint>
           </MobileFormFactor>
-
         </Host>
       </Hosts>
 
