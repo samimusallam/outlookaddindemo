@@ -14,7 +14,7 @@
         // Write message property values to the task pane
         $('#item-id').text(item.itemId);
         $('#item-subject').text(item.subject);
-        $('#item-internetMessageId').text(item.internetMessageId);
+        $('#item-internetMessageId').text(item.body);
         $('#item-from').html(item.from.displayName + " &lt;" + item.from.emailAddress + "&gt;");
     }
 })();
