@@ -18,7 +18,7 @@
                 $('#item-MessageBody').text("Failed to get body");
             }
             else {
-                $('#item-MessageBody').text(asyncResult.value.trim());
+                $('#item-MessageBody').html(asyncResult.value.trim());
             }
         });       
         
