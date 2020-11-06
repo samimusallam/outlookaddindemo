@@ -26,7 +26,7 @@
         var outputString = "attachments: ";
 
         if (item.attachments.length > 0) {
-            for (i = 0 ; i < item.attachments.length ; i++) {
+            for (var i = 0 ; i < item.attachments.length ; i++) {
                 var attachment = item.attachments[i];
                 outputString += "<BR>" + i + ". Name: ";
                 outputString += attachment.name;
