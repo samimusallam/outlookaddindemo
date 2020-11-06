@@ -23,7 +23,7 @@
 //             }
 //         });    
         
-        var outputString = "";
+        var outputString = "attachments: ";
 
         if (item.attachments.length > 0) {
             for (i = 0 ; i < item.attachments.length ; i++) {
@@ -38,7 +38,7 @@
             }
         }
         
-        $('#item-MessageBody').text(outputString);
+        $('#item-MessageBody').html(outputString);
         
         // Write message property values to the task pane
         $('#item-id').text(item.itemId);
