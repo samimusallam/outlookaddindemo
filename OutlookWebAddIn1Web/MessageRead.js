@@ -13,13 +13,13 @@
     function loadItemProps(item) {
        var body = item.body;
         $('#item-MessageBody').text("Initial Body");
-        body.getAsync(Office.CoercionType.Text, function (asyncResult) {
+        body.getAsync(Office.CoercionType.Html, function (asyncResult) {
             if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
                 console.log(asyncResult);
                 $('#item-MessageBody').text("Failed to get body");
             }
             else {
-                $('#item-MessageBody').html(asyncResult.value.trim());
+                $('#item-MessageBody').html(asyncResult.value);
             }
         });       
         
