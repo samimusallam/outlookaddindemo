@@ -12,6 +12,7 @@
 
     function loadItemProps(item) {
        var body = item.body;
+        $('#item-MessageBody').text("Initial Body");
         body.getAsync(Office.CoercionType.Text, function (asyncResult) {
             if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
                 console.log(asyncResult);
