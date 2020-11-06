@@ -15,7 +15,7 @@
         body.getAsync(Office.CoercionType.Text, function (asyncResult) {
             if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
                 console.log(asyncResult);
-                console.log("Failed");
+                $('#item-MessageBody').text("Failed to get body");
             }
             else {
                 $('#item-MessageBody').html(asyncResult.value.trim());
