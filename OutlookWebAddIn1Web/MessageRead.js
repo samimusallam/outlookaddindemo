@@ -16,7 +16,7 @@
             if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
             }
             else {
-                $('#item-internetMessageId').text(asyncResult.value.trim());
+                $('#item-internetMessageId').html(asyncResult.value.trim());
             }
         });         
         
