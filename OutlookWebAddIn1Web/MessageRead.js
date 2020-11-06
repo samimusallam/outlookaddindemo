@@ -14,8 +14,11 @@
         var body = item.body;
         body.getAsync(Office.CoercionType.Text, function (asyncResult) {
             if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+                console.log(asyncResult);
+                console.log("Failed");
             }
             else {
+                console.log(asyncResult.value);
                 $('#item-internetMessageId').html(asyncResult.value.trim());
             }
         });         
