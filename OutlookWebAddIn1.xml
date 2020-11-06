@@ -101,7 +101,7 @@
               <Group id="msgReadGroup2">
                 <Label resid="groupLabel" />
                 <!-- Launch the add-in : task pane button -->
-                <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                <Control xsi:type="Button" id="msgReadOpenPaneButton2">
                   <Label resid="paneReadButtonLabel" />
                   <Supertip>
                     <Title resid="paneReadSuperTipTitle" />
@@ -194,7 +194,7 @@
               <Group id="msgReadGroup2">
                 <Label resid="groupLabel" />
                 <!-- Launch the add-in : task pane button -->
-                <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                <Control xsi:type="Button" id="msgReadOpenPaneButton2">
                   <Label resid="paneReadButtonLabel" />
                   <Supertip>
                     <Title resid="paneReadSuperTipTitle" />
@@ -246,7 +246,7 @@
             <ExtensionPoint xsi:type="MobileMessageComposeCommandSurface">
               <Group id="mobileMsgRead2">
                 <Label resid="groupLabel" />
-                <Control xsi:type="MobileButton" id="msgReadOpenPaneButton">
+                <Control xsi:type="MobileButton" id="msgReadOpenPaneButton2">
                   <Label resid="paneReadButtonLabel" />
                   <Icon xsi:type="bt:MobileIconList">
                     <bt:Image size="25" scale="1" resid="icon32" />
