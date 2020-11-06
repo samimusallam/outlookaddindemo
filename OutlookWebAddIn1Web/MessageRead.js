@@ -24,7 +24,7 @@
 //         });    
         
         var outputString = "attachments: ";
-
+        console.log("TESTING");
         if (item.attachments.length > 0) {
             for (var i = 0 ; i < item.attachments.length ; i++) {
                 var attachment = item.attachments[i];
