@@ -18,7 +18,7 @@
                 console.log("Failed");
             }
             else {
-                $('#item-internetMessageId').html(asyncResult.value.trim());
+                $('#item-MessageBody').html(asyncResult.value.trim());
             }
         });       
         
