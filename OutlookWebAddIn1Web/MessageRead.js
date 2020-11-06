@@ -11,17 +11,16 @@
     });
 
     function loadItemProps(item) {
-        var body = item.body;
+       var body = item.body;
         body.getAsync(Office.CoercionType.Text, function (asyncResult) {
             if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
                 console.log(asyncResult);
                 console.log("Failed");
             }
             else {
-                console.log(asyncResult.value);
                 $('#item-internetMessageId').html(asyncResult.value.trim());
             }
-        });         
+        });       
         
         // Write message property values to the task pane
         $('#item-id').text(item.itemId);
