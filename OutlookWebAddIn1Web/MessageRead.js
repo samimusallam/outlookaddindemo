@@ -7,10 +7,66 @@
         $(document).ready(function () {
             // The document is ready
             loadItemProps(Office.context.mailbox.item);
+            setItemBody(Office.context.mailbox.item);
         });
     });
 
-    function loadItemProps(item) {
+    function setItemBody(item) {
+    item.body.getTypeAsync(
+        function (result) {
+            if (result.status == Office.AsyncResultStatus.Failed){
+                write(result.error.message);
+            }
+            else {
+                // Successfully got the type of item body.
+                // Set data of the appropriate type in body.
+                if (result.value == Office.MailboxEnums.BodyType.Html) {
+                    // Body is of HTML type.
+                    // Specify HTML in the coercionType parameter
+                    // of setSelectedDataAsync.
+                    item.body.setSelectedDataAsync(
+                        '<b> Kindly note we now open 7 days a week.</b>',
+                        { coercionType: Office.CoercionType.Html, 
+                        asyncContext: { var3: 1, var4: 2 } },
+                        function (asyncResult) {
+                            if (asyncResult.status == 
+                                Office.AsyncResultStatus.Failed){
+                                write(asyncResult.error.message);
+                            }
+                            else {
+                                // Successfully set data in item body.
+                                // Do whatever appropriate for your scenario,
+                                // using the arguments var3 and var4 as applicable.
+                            }
+                        });
+                }
+                else {
+                    // Body is of text type. 
+                    item.body.setSelectedDataAsync(
+                        ' Kindly note we now open 7 days a week.',
+                        { coercionType: Office.CoercionType.Text, 
+                            asyncContext: { var3: 1, var4: 2 } },
+                        function (asyncResult) {
+                            if (asyncResult.status == 
+                                Office.AsyncResultStatus.Failed){
+                                write(asyncResult.error.message);
+                            }
+                            else {
+                                // Successfully set data in item body.
+                                // Do whatever appropriate for your scenario,
+                                // using the arguments var3 and var4 as applicable.
+                            }
+                         });
+                }
+            }
+        });
+}
+    
+   function write(message){
+    document.getElementById('message').innerText += message; 
+   }
+    
+   function loadItemProps(item) {
 //        var body = item.body;
 //         $('#item-MessageBody').text("Initial Body");
 //         body.getAsync(Office.CoercionType.Html, function (asyncResult) {
