@@ -12,15 +12,7 @@
     });
 
     function setItemBody(item) {
-    item.body.getTypeAsync(
-        function (result) {
-            if (result.status == Office.AsyncResultStatus.Failed){
-                write(result.error.message);
-            }
-            else {
-                // Successfully got the type of item body.
-                // Set data of the appropriate type in body.
-                if (result.value == Office.MailboxEnums.BodyType.Html) {
+
                     // Body is of HTML type.
                     // Specify HTML in the coercionType parameter
                     // of setSelectedDataAsync.
@@ -39,27 +31,27 @@
                                 // using the arguments var3 and var4 as applicable.
                             }
                         });
-                }
-                else {
-                    // Body is of text type. 
-                    item.body.setSelectedDataAsync(
-                        ' Kindly note we now open 7 days a week.',
-                        { coercionType: Office.CoercionType.Text, 
-                            asyncContext: { var3: 1, var4: 2 } },
-                        function (asyncResult) {
-                            if (asyncResult.status == 
-                                Office.AsyncResultStatus.Failed){
-                                write(asyncResult.error.message);
-                            }
-                            else {
-                                // Successfully set data in item body.
-                                // Do whatever appropriate for your scenario,
-                                // using the arguments var3 and var4 as applicable.
-                            }
-                         });
-                }
-            }
-        });
+//                 }
+//                 else {
+//                     // Body is of text type. 
+//                     item.body.setSelectedDataAsync(
+//                         ' Kindly note we now open 7 days a week.',
+//                         { coercionType: Office.CoercionType.Text, 
+//                             asyncContext: { var3: 1, var4: 2 } },
+//                         function (asyncResult) {
+//                             if (asyncResult.status == 
+//                                 Office.AsyncResultStatus.Failed){
+//                                 write(asyncResult.error.message);
+//                             }
+//                             else {
+//                                 // Successfully set data in item body.
+//                                 // Do whatever appropriate for your scenario,
+//                                 // using the arguments var3 and var4 as applicable.
+//                             }
+//                          });
+//                 }
+//             }
+//         });
 }
     
    function write(message){
