@@ -12,10 +12,6 @@
     });
 
     function setItemBody(item) {
-
-                    // Body is of HTML type.
-                    // Specify HTML in the coercionType parameter
-                    // of setSelectedDataAsync.
                     item.body.setSelectedDataAsync(
                         '<b> Kindly note we now open 7 days a week.</b>',
                         { coercionType: Office.CoercionType.Html, 
