@@ -29,35 +29,108 @@
     <!-- <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css" /> -->
 
 </head>
-<body class="ms-font-m ms-welcome">
-<div class="ms-Fabric content-main">
-    <h1 class="ms-font-xxl">Github Message properties</h1>
-    <table class="ms-Table ms-Table--selectable">
-        <thead>
-        <tr>
-            <th>Property</th>
-            <th>Value</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td><strong>Id</strong></td>
-            <td class="prop-val"><code><label id="item-id"></label></code></td>
-        </tr>
-        <tr>
-            <td><strong>Subject</strong></td>
-            <td class="prop-val"><code><label id="item-subject"></label></code></td>
-        </tr>
-        <tr>
-            <td><strong>Message Id</strong></td>
-            <td class="prop-val"><code><label id="item-internetMessageId"></label></code></td>
-        </tr>
-        <tr>
-            <td><strong>From</strong></td>
-            <td class="prop-val"><code><label id="item-from"></label></code></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<body class="ms-Fabric" dir="ltr">
+
+    <div id="content-header">
+        <div class="padding">
+            <p class="ms-font-xl ms-fontColor-themeDarkAlt ms-fontWeight-semilight">All properties</p>
+        </div>
+    </div>
+    <div id="content-main" class="ms-Grid" dir="ltr">
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col  ms-sm12">
+                <h2 class="ms-font-l">Office.context.mailbox.Item properties</h2>
+                <div class="ms-Grid" dir="ltr">
+                    <div class="ms-Grid-row">
+                        <div class="ms-Grid-col ms-sm5">Property</div>
+                        <div class="ms-Grid-col ms-sm7">Value</div>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <div class="ms-Grid-col ms-fontWeight-semibold ms-sm5">dateTimeCreated</div>
+                        <div id="dateTimeCreated" class="ms-Grid-col ms-sm7"></div>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <div class="ms-Grid-col ms-fontWeight-semibold ms-sm5">dateTimeModified</div>
+                        <div id="dateTimeModified" class="ms-Grid-col ms-sm7"></div>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <div class="ms-Grid-col ms-fontWeight-semibold ms-sm5">itemClass</div>
+                        <div id="itemClass" class="ms-Grid-col ms-sm7"></div>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <div class="ms-Grid-col ms-fontWeight-semibold ms-sm5">itemId</div>
+                        <div id="itemId" class="ms-Grid-col ms-sm7"></div>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <div class="ms-Grid-col ms-fontWeight-semibold ms-sm5">itemType</div>
+                        <div id="itemType" class="ms-Grid-col ms-sm7"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="message-props" class="ms-Grid-row hidden">
+            <div class="ms-Grid-col ms-sm12 ms-md12 ms-lg12">
+                <h2 class="ms-font-l">Office.context.mailbox.Message properties</h2>
+                <div class="ms-Grid" dir="ltr">
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-sm5">Property</span>
+                        <span class="ms-Grid-col ms-sm7">Value</span>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-fontWeight-semibold ms-sm5">attachments</span>
+                        <span id="attachments" class="ms-Grid-col ms-sm7"></span>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-fontWeight-semibold ms-sm5">cc</span>
+                        <span id="cc" class="ms-Grid-col ms-sm7"></span>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-fontWeight-semibold ms-sm5">conversationId</span>
+                        <span id="conversationId" class="ms-Grid-col ms-sm7"></span>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-fontWeight-semibold ms-sm5">from</span>
+                        <span id="from" class="ms-Grid-col ms-sm7"></span>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-fontWeight-semibold ms-sm5">internetMessageId</span>
+                        <span id="internetMessageId" class="ms-Grid-col ms-sm7"></span>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-fontWeight-semibold ms-sm5">normalizedSubject</span>
+                        <span id="normalizedSubject" class="ms-Grid-col ms-sm7"></span>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-fontWeight-semibold ms-sm5">sender</span>
+                        <span id="sender" class="ms-Grid-col ms-sm7"></span>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-fontWeight-semibold ms-sm5">subject</span>
+                        <span id="subject" class="ms-Grid-col ms-sm7"></span>
+                    </div>
+                    <div class="ms-Grid-row">
+                        <span class="ms-Grid-col ms-fontWeight-semibold ms-sm5">to</span>
+                        <span id="to" class="ms-Grid-col ms-sm7"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Component used for displaying notifications -->
+    <div class="MessageBanner" style="position:absolute;bottom: 0;">
+        <div class="MessageBanner-content">
+            <div class="MessageBanner-text">
+                <div class="MessageBanner-clipper">
+                    <div class="ms-font-m-plus ms-fontWeight-semibold" id="notificationHeader"></div>
+                    <div class="ms-font-m ms-fontWeight-semilight" id="notificationBody"></div>
+                </div>
+            </div>
+            <button class="MessageBanner-expand" style="display:none"><i class="ms-Icon ms-Icon--chevronsDown"></i> </button>
+            <div class="MessageBanner-action"></div>
+        </div>
+        <button class="MessageBanner-close"> <i class="ms-Icon ms-Icon--ChromeClose"></i> </button>
+    </div>
 </body>
 </html>
