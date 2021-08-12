@@ -61,6 +61,20 @@
   function loadProps() {
     var item = Office.context.mailbox.item;
 
+    item.addFileAttachmentAsync(
+      'https://contoso.com/rtm/icon.png',
+      'icon.png',
+      { asyncContext: null },
+      function (asyncResult) {
+          if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+              showNotification("ERROR", asyncResult.error.message);
+          } else {
+              // Get the ID of the attached file.
+              var attachmentId = asyncResult.value;
+              showNotification('SUCCESS', attachmentId);
+          }
+      });
+      
     $('#dateTimeCreated').text(item.dateTimeCreated.toLocaleString());
     $('#dateTimeModified').text(item.dateTimeModified.toLocaleString());
     $('#itemClass').text(item.itemClass);
